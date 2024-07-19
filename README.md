@@ -7,13 +7,11 @@ efficiently.
 
  Key Features:
  
- ● Simpleanduser-friendly interface: Report complaints with ease, using clear instructions and intuitive navigation.
+ ● Simple and user-friendly interface: Report complaints with ease, using clear instructions and intuitive navigation.
  
  ● Multiple complaint categories: Select the most relevant category for your issue, ensuring proper routing and prioritization.
 
- ● Photoandvideo upload: Attach photos or videos to provide visual evidence and enhance your complaint description.
- 
- ● Anonymousreporting (Optional): Choose to submit your complaint anonymously if desired.
+ ● Photo and video upload: Attach photos or videos to provide visual evidence and enhance your complaint description.
 
  Howto File a Complaint:
  
@@ -23,7 +21,7 @@ efficiently.
  
  3. Provide a clear and detailed description of your complaint.
  
- 4. Attach any relevant photos or videos (optional).
+ 4. Attach any relevant photos or videos.
  
  5. Submit your complaint.
  
