@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="#E7EEFB"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="SpotFix"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#E7EEFB">
+        <ScrollView
+            android:id="@+id/vscroll1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/top_round_bg">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:id="@+id/success"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:layout_marginTop="25dp"
+                        android:textSize="18sp"
+                        android:text="Spot a problem? Potholes, lights, water? Report it here, fix your neighborhood and be the change."
+                        android:textColor="#000000"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/report"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Report an issue >>"
+                            android:layout_weight="2"
+                            android:padding="12dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:background="#4c6ef4"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="4dp"
+        android:background="#1944f1"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/linearx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/round_nav"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview1"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textSize="8sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linears"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview4"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewsafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAP"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview2"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/info"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUIDELINES"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview3"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

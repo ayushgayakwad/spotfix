@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#E7EEFB"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            android:background="#E7EEFB"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:text="Guidelines"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/top_round_bg"
+            android:layout_weight="1"
+            android:padding="8dp">
+            <ScrollView
+                android:id="@+id/vscroll1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/l1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="Reporting Civic Issues:"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:text="* Goto 'Report an issue' section.\n* Provide a detailed description of the issue in the report form.\n* Include relevant photo of issue."/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="Map Navigation:"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:text="* Use pinch gestures to zoom in and out on the map.\n* Drag your finger to pan across the map.\n* Double-tap to zoom in on a specific area.\n* Refresh the map periodically to view the latest updates and resolved issues."/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="Marker Color Coding:"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:text="* Different colors on markers indicate different types of issues (e.g., red for electricity, blue for water, green for construction).\n* Ensure you select the correct issue type when reporting."/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="Photo Attachments:"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:text="* Attach relevant photos to your report to provide additional context.\n* Ensure photos are clear and directly related to the reported issue."/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="Emergency Situations:"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:text="* For emergencies (e.g., immediate safety hazards), contact local emergency services directly.\n* Use the app for non-emergency civic issues only."/>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1944f1"
+        android:padding="4dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/linearx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview1"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeb"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linears"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview4"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewsafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAP"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/round_nav"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview2"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/infow"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUIDELINES"
+                android:textSize="8sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview3"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

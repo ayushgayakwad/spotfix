@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "377622088606",
+    "firebase_url": "https://spotfix-ambition-default-rtdb.firebaseio.com",
+    "project_id": "spotfix-ambition",
+    "storage_bucket": "spotfix-ambition.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377622088606:android:3327f7c9a5224ad411e48f",
+        "android_client_info": {
+          "package_name": "com.ambition.spotfix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe-hgqBOGAmrBoELD3uePpOjAYnfHP3so"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

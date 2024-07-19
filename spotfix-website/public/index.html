@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpotFix Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <style>
+      body, html {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      #map {
+          height: 100%;
+          width: 100%;
+      }
+      .legend {
+          background: white;
+          padding: 10px;
+          line-height: 1.5em;
+          color: #333;
+      }
+      .legend i {
+          width: 12px;
+          height: 12px;
+          float: left;
+          margin-right: 8px;
+          opacity: 0.7;
+      }
+    </style>
+</head>
+<body>
+  <div id="map"></div>
+    
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyAXY5g3pt8jo00dFu7nCI07a8PpycBigpI",
+          authDomain: "spotfix-ambition.firebaseapp.com",
+          databaseURL: "https://spotfix-ambition-default-rtdb.firebaseio.com",
+          projectId: "spotfix-ambition",
+          storageBucket: "spotfix-ambition.appspot.com",
+          messagingSenderId: "377622088606",
+          appId: "1:377622088606:web:2c470214d4ba20c511e48f",
+          measurementId: "G-27NX8SNTWP"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database(app);
+
+        const map = L.map('map').setView([12.9716, 77.5946], 10);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        function addMarker(lat, lng, color, desc, status) {
+            if (status === "unsolved") {
+                L.circleMarker([lat, lng], { color: color, radius: 4 })
+                    .bindPopup(desc)
+                    .addTo(map);
+            } else {
+                return;
+            }
+        }
+
+        function fetchDataAndAddMarkers(path, color) {
+            database.ref(path).on('value', (snapshot) => {
+                const data = snapshot.val();
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        const lat = data[key].latitude;
+                        const lng = data[key].longitude;
+                        const desc = data[key].desc || "No description available";
+                        const status = data[key].status || "solved"; 
+                        addMarker(lat, lng, color, desc, status);
+                    }
+                }
+            });
+        }
+
+        fetchDataAndAddMarkers('electricity', 'red');
+        fetchDataAndAddMarkers('water', 'blue');
+        fetchDataAndAddMarkers('construction', 'green');
+        fetchDataAndAddMarkers('sanitation', 'purple');
+
+        const legend = L.control({ position: 'bottomright' });
+
+        legend.onAdd = function (map) {
+            const div = L.DomUtil.create('div', 'legend');
+            div.innerHTML += '<i style="background: red"></i> Electricity<br>';
+            div.innerHTML += '<i style="background: blue"></i> Water<br>';
+            div.innerHTML += '<i style="background: green"></i> Construction<br>';
+            div.innerHTML += '<i style="background: purple"></i> Sanitation<br>';
+            return div;
+        };
+
+        legend.addTo(map);
+    </script>
+</body>
+</html>

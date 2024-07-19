@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SpotFix</string>
+    <string name="number">0000000000</string>
+    <string name="sent">Text Message Sent</string>
+    <string name="setting">Settings</string>
+    <string name="contact_1">Contact 1</string>
+    <string name="contact_2">Contact 2</string>
+    <string name="contact_3">Contact 3</string>
+</resources>

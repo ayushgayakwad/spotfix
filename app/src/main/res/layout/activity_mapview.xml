@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#E7EEFB"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            android:background="#E7EEFB"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:text="MAP"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+            <ProgressBar
+                android:id="@+id/progressbar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                style="?android:progressBarStyleHorizontal"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="#000000"
+            android:background="#FFFFFF"
+            android:textSize="16sp"
+            android:text="Loading map..."/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:layout_weight="1"
+            android:padding="0dp">
+            <WebView
+                android:id="@+id/webview1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1944f1"
+        android:padding="4dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/linearx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview1"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeb"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linears"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="@drawable/round_nav"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview4"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mapw"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewsafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAP"
+                android:textSize="8sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview2"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/info"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/textviewn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUIDELINES"
+                android:textColor="#000000"
+                android:textSize="8sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imageview3"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile"
+                android:layout_weight="1"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/textviewa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textSize="8sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

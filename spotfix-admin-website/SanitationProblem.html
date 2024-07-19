@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Department</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      padding: 0;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    #report-form {
+      margin-bottom: 20px;
+    }
+
+    #report-table {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .status-select {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Water Department Reports</h1>
+  <div id="report-form">
+    <!-- Form to submit new reports (if needed) -->
+    <!-- Example:
+    <form id="new-report-form">
+      <input type="text" id="problem-description" placeholder="Problem Description">
+      <input type="text" id="image-url" placeholder="Image URL">
+      <input type="text" id="location" placeholder="Location">
+      <select id="status">
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="resolved">Resolved</option>
+      </select>
+      <input type="text" id="name" placeholder="Your Name">
+      <button type="submit">Submit Report</button>
+    </form>
+    -->
+  </div>
+  <div id="report-table">
+    <h2>Existing Reports</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Problem Description</th>
+          <th>Image/Video</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="report-data">
+        <!-- Table rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "AIzaSyAXY5g3pt8jo00dFu7nCI07a8PpycBigpI",
+      authDomain: "spotfix-ambition.firebaseapp.com",
+      databaseURL: "https://spotfix-ambition-default-rtdb.firebaseio.com",
+      projectId: "spotfix-ambition",
+      storageBucket: "spotfix-ambition.appspot.com",
+      messagingSenderId: "377622088606",
+      appId: "1:377622088606:web:2c470214d4ba20c511e48f",
+      measurementId: "G-27NX8SNTWP"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Reference to your Firebase database
+    var database = firebase.database();
+
+    // Reference to the reports node in your database
+    var reportsRef = database.ref('sanitation');
+
+    // Function to fetch and display reports
+    function fetchReports() {
+      reportsRef.once('value', function(snapshot) {
+        // Clear existing table rows
+        var reportTable = document.getElementById('report-data');
+        reportTable.innerHTML = '';
+
+        // Iterate over each report
+        snapshot.forEach(function(childSnapshot) {
+          var reportKey = childSnapshot.key;
+          var reportData = childSnapshot.val();
+
+          // Create a new row
+          var newRow = reportTable.insertRow();
+
+          // Insert cells into the row
+          var descCell = newRow.insertCell(0);
+          var imageCell = newRow.insertCell(1);
+          var locationCell = newRow.insertCell(2);
+          var statusCell = newRow.insertCell(3);
+          var nameCell = newRow.insertCell(4);
+          var actionsCell = newRow.insertCell(5);
+
+          // Populate cells with data
+          descCell.textContent = reportData.desc; // Problem Description
+          imageCell.innerHTML = `<img src="${reportData.image}" alt="Report Image" style="max-width: 100px;">`; // Image/Video
+          locationCell.textContent = `${reportData.latitude}, ${reportData.longitude}`; // Location (latitude, longitude)
+
+          // Status dropdown
+          var statusSelect = document.createElement('select');
+          statusSelect.classList.add('status-select');
+          var statusOptions = ['solved', 'unsolved'];
+          statusOptions.forEach(function(option) {
+            var optionElem = document.createElement('option');
+            optionElem.value = option;
+            optionElem.textContent = option.charAt(0).toUpperCase() + option.slice(1);
+            if (option === reportData.status) {
+              optionElem.selected = true;
+            }
+            statusSelect.appendChild(optionElem);
+          });
+          statusCell.appendChild(statusSelect);
+
+          nameCell.textContent = reportData.name; // Name of the person who complained
+
+          // Action buttons (Update Status)
+          var updateButton = document.createElement('button');
+          updateButton.textContent = 'Update Status';
+          updateButton.addEventListener('click', function() {
+            var newStatus = statusSelect.value;
+            updateStatus(reportKey, newStatus);
+          });
+          actionsCell.appendChild(updateButton);
+        });
+      });
+    }
+
+    // Function to update status in the database
+    function updateStatus(reportKey, newStatus) {
+      var reportRef = reportsRef.child(reportKey);
+      reportRef.update({
+        status: newStatus
+      }).then(function() {
+        console.log('Status updated successfully');
+        // Optionally, you can update the UI here if needed
+      }).catch(function(error) {
+        console.error('Error updating status: ', error);
+      });
+    }
+
+    // Call fetchReports when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchReports();
+    });
+  </script>
+</body>
+</html>
