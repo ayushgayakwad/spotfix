@@ -1,11 +1,21 @@
 # SpotFix
-Aim: A mobile app that crowd sources water-related problems from around a community, open sources data, etc. and display them on a map.
+## Aim: A platform that crowd sources civic-issues (water, electricity, construction and sanitation) from around a community, open sources data, etc. and display them on a map.
 
-Welcome to the SpotFix Problem/Complaint Reporting Dashboard!
+## Welcome to the SpotFix Problem/Complaint Reporting Dashboard!
 This website and application is designed to empower you, the public, to report any issues or concerns you encounter. We take every complaint seriously and strive to address them promptly and
 efficiently.
 
- Key Features:
+## What's included:
+
+● SpotFix android app;
+
+● SpotFix real-time map;
+
+● SpotFix admin website;
+
+● SpotFix Twitter bot;
+
+## Key Features:
  
  ● Simple and user-friendly interface: Report complaints with ease, using clear instructions and intuitive navigation.
  
@@ -13,9 +23,9 @@ efficiently.
 
  ● Photo and video upload: Attach photos or videos to provide visual evidence and enhance your complaint description.
 
- Howto File a Complaint:
+## How to report a civic-issue:
  
- 1. Click on "Report a Complaint" button.
+ 1. Click on "Report an issue" button.
  
  2. Select the most appropriate category for your issue.
  
@@ -24,10 +34,3 @@ efficiently.
  4. Attach any relevant photos or videos.
  
  5. Submit your complaint.
- 
- 
- Complaint Tracking:
- 
- Once submitted, you will receive a confirmation email with a unique reference number. You can use this number to track the progress of your complaint at any time.
- 
- We appreciate your feedback and value your participation in making our community a better place!
