@@ -85,6 +85,8 @@ public class History extends AppCompatActivity {
                         issue.put("reported_time", snapshot.child("reported_time").getValue(String.class));
                         issue.put("status", snapshot.child("status").getValue(String.class));
                         issue.put("image", snapshot.child("image").getValue(String.class));
+                        issue.put("latitude", snapshot.child("latitude").getValue(String.class));
+                        issue.put("longitude", snapshot.child("longitude").getValue(String.class));
                         historylist.add(issue);
                     }
                 }
@@ -136,16 +138,18 @@ public class History extends AppCompatActivity {
             final TextView description = _v.findViewById(R.id.description);
             final TextView date = _v.findViewById(R.id.date);
             final TextView status = _v.findViewById(R.id.status);
+            final TextView location = _v.findViewById(R.id.location);
             HashMap<String, Object> issue = historylist.get(_position);
             if(issue.get("status").toString().equals("solved")) {
                 _SetCornerRadius(description, 25, 0, "#478778");
-                _SetCornerRadius(linear4, 25, 12, "#C1E1C1");
+                _SetCornerRadius(linear4, 50, 12, "#C1E1C1");
             }
             else{
                 _SetCornerRadius(description, 25, 0, "#800020");
-                _SetCornerRadius(linear4, 25, 12, "#FAA0A0");
+                _SetCornerRadius(linear4, 50, 12, "#FAA0A0");
             }
             id.setText("Issue ID: " + issue.get("issue_id").toString());
+            location.setText("Location: " + issue.get("latitude").toString()+", " + issue.get("longitude").toString());
             description.setText(issue.get("desc").toString());
             date.setText("Reported on: " + issue.get("reported_time").toString());
             status.setText("Status: " + issue.get("status").toString());
