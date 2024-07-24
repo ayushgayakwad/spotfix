@@ -1,45 +1,47 @@
-<script src="https://www.gstatic.com/firebasejs/9/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9/firebase-database.js"></script>
-
-
-
-<link href='index2.css' rel='stylesheet'>
-<script src="index2.js"></script>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpotFix Admin</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index2.css">
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <h1>SpotFix Admin Dashboard</h1>
-        </header>
-        <main>
+            <nav>
+                <a href="waterProblem.html">Water Problem</a>
+                <a href="ElectricProblem.html">Electricity Department</a>
+                <a href="ConstructionProblem.html">Construction Department</a>
+                <a href="SanitationProblem.html">Sanitation Department</a>
+                <a href="https://spotfix-ambition.web.app" target="_blank">Realtime Issue Map</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
             <section id="water-problem">
-                <h2><a href="waterProblem.html">Water problem</a></h2>
-
+                <h2><a href="waterProblem.html">Water Problem</a></h2>
                 <p>Details about Water Leakage Issues, Reported Problems, and Call-to-Action.</p>
             </section>
             <section id="electricity-department">
                 <h2><a href="ElectricProblem.html">Electricity Department</a></h2>
-                <p>Information about Electricity Supply Problem, Outages, and Services.</p>
+                <p>Information about Electricity Supply Problems, Outages, and Services.</p>
             </section>
             <section id="construction-department">
                 <h2><a href="ConstructionProblem.html">Construction Department</a></h2>
-                <p>Details on Roads Breakdown problems, Pot Holes, Flodded Highways, and Services.</p>
+                <p>Details on Roads Breakdown Problems, Pot Holes, Flooded Highways, and Services.</p>
             </section>
             <section id="sanitation-department">
                 <h2><a href="SanitationProblem.html">Sanitation Department</a></h2>
-                <p>Reports on Sanitation Faults, Scattered Waste, and Other Problem reports.</p>
+                <p>Reports on Sanitation Faults, Scattered Waste, and Other Problem Reports.</p>
             </section>
-        </main>
-    </div>
+            <section id="realtime-issue-map">
+                <h2><a href="https://spotfix-ambition.web.app" target="_blank">Realtime Issue Map</a></h2>
+                <p>View a real-time map showing the location of reported issues.</p>
+            </section>
+        </div>
+    </main>
 </body>
 </html>

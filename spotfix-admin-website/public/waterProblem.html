@@ -3,18 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Water Department</title>
+  <title>Water Department Reports</title>
   <style>
-    /* Add your custom CSS styles here */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      margin: 20px;
+      margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
     }
 
-    h1, h2 {
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 0;
       text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    main {
+      margin-top: 2rem;
     }
 
     #report-form {
@@ -35,7 +57,7 @@
     }
 
     th, td {
-      padding: 8px;
+      padding: 12px;
       text-align: left;
     }
 
@@ -43,55 +65,110 @@
       background-color: #f2f2f2;
     }
 
+    img {
+      max-width: 100px;
+      border-radius: 4px;
+    }
+
     .status-select {
-      width: 100px;
+      width: 120px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    #report-table h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      table, th, td {
+        font-size: 14px;
+        white-space: nowrap; /* Prevents text from wrapping */
+      }
+
+      .status-select {
+        width: 100px;
+      }
+
+      button {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+
+      /* Make the table scrollable on small screens */
+      #report-table {
+        overflow-x: auto;
+        display: block;
+      }
+
+      table {
+        min-width: 600px; /* Ensures table does not shrink too much */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Water Department Reports</h1>
-  <div id="report-form">
-    <!-- Form to submit new reports (if needed) -->
-    <!-- Example:
-    <form id="new-report-form">
-      <input type="text" id="problem-description" placeholder="Problem Description">
-      <input type="text" id="image-url" placeholder="Image URL">
-      <input type="text" id="location" placeholder="Location">
-      <select id="status">
-        <option value="pending">Pending</option>
-        <option value="in-progress">In Progress</option>
-        <option value="resolved">Resolved</option>
-      </select>
-      <input type="text" id="name" placeholder="Your Name">
-      <button type="submit">Submit Report</button>
-    </form>
-    -->
+  <div class="container">
+    <header>
+      <h1>Water Department Reports</h1>
+    </header>
+    <main>
+      <section id="report-form">
+        <!-- Form content here -->
+      </section>
+      <section id="report-table">
+        <h2>Existing Reports</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Issue ID</th>
+              <th>Problem Description</th>
+              <th>Image/Video</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="report-data">
+          </tbody>
+        </table>
+      </section>
+    </main>
   </div>
-  <div id="report-table">
-    <h2>Existing Reports</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Problem Description</th>
-          <th>Image/Video</th>
-          <th>Location</th>
-          <th>Status</th>
-          <th>Name</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="report-data">
-        <!-- Table rows will be dynamically inserted here -->
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Firebase JavaScript SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-
   <script>
-    // Initialize Firebase
     var firebaseConfig = {
       apiKey: "AIzaSyAXY5g3pt8jo00dFu7nCI07a8PpycBigpI",
       authDomain: "spotfix-ambition.firebaseapp.com",
@@ -104,42 +181,30 @@
     };
 
     firebase.initializeApp(firebaseConfig);
-
-    // Reference to your Firebase database
     var database = firebase.database();
-
-    // Reference to the reports node in your database
     var reportsRef = database.ref('water');
-
-    // Function to fetch and display reports
+    
     function fetchReports() {
       reportsRef.once('value', function(snapshot) {
-        // Clear existing table rows
         var reportTable = document.getElementById('report-data');
         reportTable.innerHTML = '';
-
-        // Iterate over each report
         snapshot.forEach(function(childSnapshot) {
           var reportKey = childSnapshot.key;
           var reportData = childSnapshot.val();
-
-          // Create a new row
           var newRow = reportTable.insertRow();
+          var issueIdCell = newRow.insertCell(0);
+          var descCell = newRow.insertCell(1);
+          var imageCell = newRow.insertCell(2);
+          var locationCell = newRow.insertCell(3);
+          var statusCell = newRow.insertCell(4);
+          var nameCell = newRow.insertCell(5);
+          var actionsCell = newRow.insertCell(6);
 
-          // Insert cells into the row
-          var descCell = newRow.insertCell(0);
-          var imageCell = newRow.insertCell(1);
-          var locationCell = newRow.insertCell(2);
-          var statusCell = newRow.insertCell(3);
-          var nameCell = newRow.insertCell(4);
-          var actionsCell = newRow.insertCell(5);
+          issueIdCell.textContent = reportData.issue_id;
+          descCell.textContent = reportData.desc;
+          imageCell.innerHTML = `<img src="${reportData.image}" alt="Report Image">`;
+          locationCell.textContent = `${reportData.latitude}, ${reportData.longitude}`;
 
-          // Populate cells with data
-          descCell.textContent = reportData.desc; // Problem Description
-          imageCell.innerHTML = `<img src="${reportData.image}" alt="Report Image" style="max-width: 100px;">`; // Image/Video
-          locationCell.textContent = `${reportData.latitude}, ${reportData.longitude}`; // Location (latitude, longitude)
-
-          // Status dropdown
           var statusSelect = document.createElement('select');
           statusSelect.classList.add('status-select');
           var statusOptions = ['solved', 'unsolved'];
@@ -154,9 +219,8 @@
           });
           statusCell.appendChild(statusSelect);
 
-          nameCell.textContent = reportData.name; // Name of the person who complained
+          nameCell.textContent = reportData.name;
 
-          // Action buttons (Update Status)
           var updateButton = document.createElement('button');
           updateButton.textContent = 'Update Status';
           updateButton.addEventListener('click', function() {
@@ -168,20 +232,16 @@
       });
     }
 
-    // Function to update status in the database
     function updateStatus(reportKey, newStatus) {
       var reportRef = reportsRef.child(reportKey);
       reportRef.update({
         status: newStatus
       }).then(function() {
         console.log('Status updated successfully');
-        // Optionally, you can update the UI here if needed
       }).catch(function(error) {
         console.error('Error updating status: ', error);
       });
     }
-
-    // Call fetchReports when the page loads
     document.addEventListener('DOMContentLoaded', function() {
       fetchReports();
     });
