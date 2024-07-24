@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 public class Profile extends AppCompatActivity {
 
@@ -54,6 +56,7 @@ public class Profile extends AppCompatActivity {
     private TextView email;
     private TextView state;
     private TextView uid;
+    private LinearLayout language;
     private ProgressBar progressbar1;
     private ScrollView vscroll1;
     private Intent i = new Intent();
@@ -77,6 +80,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLanguagePreference();
         setContentView(R.layout.activity_profile);
 
         linear7 = findViewById(R.id.linear7);
@@ -95,6 +99,7 @@ public class Profile extends AppCompatActivity {
         uid = findViewById(R.id.uid);
         phone = findViewById(R.id.phone);
         email = findViewById(R.id.email);
+        language = findViewById(R.id.language);
 
         userdata = getSharedPreferences("userdata", Activity.MODE_PRIVATE);
         auth = FirebaseAuth.getInstance();
@@ -112,12 +117,12 @@ public class Profile extends AppCompatActivity {
         address.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b, int c, int d) { this.setCornerRadius(a); this.setStroke(b, c); this.setColor(d); return this; }}.getIns((int)16, (int)0, 0xFFFFFFFF, 0xFFE7EEFB));
 
         name.setText(userdata.getString("name", ""));
-        city.setText("City: "+userdata.getString("city", ""));
-        district.setText("District: "+userdata.getString("district", ""));
-        state.setText("State: "+userdata.getString("state", ""));
-        uid.setText("UID: "+FirebaseAuth.getInstance().getCurrentUser().getUid());
-        phone.setText("Phone Number: "+userdata.getString("cn", ""));
-        email.setText("Email: "+FirebaseAuth.getInstance().getCurrentUser().getEmail());
+        city.setText(getString(R.string.city) + ": "+userdata.getString("city", ""));
+        district.setText(getString(R.string.district) + ": "+userdata.getString("district", ""));
+        state.setText(getString(R.string.state) + ": "+userdata.getString("state", ""));
+        uid.setText(getString(R.string.uid) + ": "+FirebaseAuth.getInstance().getCurrentUser().getUid());
+        phone.setText(getString(R.string.phone) + ": "+userdata.getString("cn", ""));
+        email.setText(getString(R.string.email) + ": "+FirebaseAuth.getInstance().getCurrentUser().getEmail());
         linearp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,10 +139,10 @@ public class Profile extends AppCompatActivity {
                 TextView b2c = (TextView) inflate.findViewById(R.id.b2c);
 
                 LinearLayout bgc = (LinearLayout) inflate.findViewById(R.id.bgc);
-                t1c.setText("Change password?");
+                t1c.setText(getString(R.string.password));
                 t2c.setText("You will receive an email to change the password for ".concat(FirebaseAuth.getInstance().getCurrentUser().getEmail()).concat(" account."));
-                b1c.setText("Continue");
-                b2c.setText("Cancel");
+                b1c.setText(getString(R.string.conti));
+                b2c.setText(getString(R.string.cancel));
                 _rippleRoundStroke(bgc, "#FFFFFF", "#000000", 15, 0, "#000000");
                 _rippleRoundStroke(b1c, "#FF1944f1", "#f5f5f5", 100, 2, "#eeeeee");
                 b1c.setOnClickListener(new View.OnClickListener(){ public void onClick(View v){
@@ -176,6 +181,10 @@ public class Profile extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
         });
 
+        language.setOnClickListener(v -> {
+            Intent n = new Intent(this, LanguageSelector.class);
+            startActivity(n);
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,6 +261,20 @@ public class Profile extends AppCompatActivity {
                 Color.parseColor("#" + _strokeclr.replace("#", "")));
         android.graphics.drawable.RippleDrawable RE = new android.graphics.drawable.RippleDrawable(new android.content.res.ColorStateList(new int[][]{new int[]{}}, new int[]{ Color.parseColor(_pressed)}), GG, null);
         _view.setBackground(RE);
+    }
+
+    public void loadLanguagePreference() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String languageCode = sharedPreferences.getString("language", "en");
+        setLocale(languageCode);
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     @Override

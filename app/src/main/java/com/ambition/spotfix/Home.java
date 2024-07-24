@@ -3,25 +3,21 @@ package com.ambition.spotfix;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.location.Address;
-import android.location.Geocoder;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -46,9 +42,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Locale;
 
 public class Home extends AppCompatActivity {
 
@@ -62,6 +57,7 @@ public class Home extends AppCompatActivity {
     private TextView report;
     private TextView history;
     private ScrollView vscroll1;
+    private TextView language;
     private FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
     static double mLatitude,mLongitude;
@@ -77,6 +73,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        loadLanguagePreference();
         setContentView(R.layout.activity_home);
 
         // Need to check permission regularly
@@ -266,6 +263,20 @@ public class Home extends AppCompatActivity {
                 Color.parseColor("#" + _strokeclr.replace("#", "")));
         android.graphics.drawable.RippleDrawable RE = new android.graphics.drawable.RippleDrawable(new android.content.res.ColorStateList(new int[][]{new int[]{}}, new int[]{ Color.parseColor(_pressed)}), GG, null);
         _view.setBackground(RE);
+    }
+
+    public void loadLanguagePreference() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String languageCode = sharedPreferences.getString("language", "en");
+        setLocale(languageCode);
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     @Override

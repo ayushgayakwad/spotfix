@@ -28,7 +28,7 @@
                 android:padding="8dp"
                 android:gravity="center"
                 android:textSize="25sp"
-                android:text="Guidelines"
+                android:text="@string/guidelines"
                 android:textColor="#000000"
                 android:textStyle="bold"/>
         </LinearLayout>
@@ -62,7 +62,7 @@
                             android:textColor="#000000"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="Reporting Civic Issues:"/>
+                            android:text="@string/reporting_civic_issues"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                             android:padding="8dp"
                             android:textColor="#000000"
                             android:textSize="16sp"
-                            android:text="* Goto 'Report an issue' section.\n* Provide a detailed description of the issue in the report form.\n* Include relevant photo of issue."/>
+                            android:text="@string/reporting_civic_issues_instructions"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                             android:textColor="#000000"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="Map Navigation:"/>
+                            android:text="@string/map_navigation"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                             android:padding="8dp"
                             android:textColor="#000000"
                             android:textSize="16sp"
-                            android:text="* Use pinch gestures to zoom in and out on the map.\n* Drag your finger to pan across the map.\n* Double-tap to zoom in on a specific area.\n* Refresh the map periodically to view the latest updates and resolved issues."/>
+                            android:text="@string/map_navigation_instructions"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                             android:textColor="#000000"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="Marker Color Coding:"/>
+                            android:text="@string/marker_color_coding"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -114,7 +114,7 @@
                             android:padding="8dp"
                             android:textColor="#000000"
                             android:textSize="16sp"
-                            android:text="* Different colors on markers indicate different types of issues (e.g., red for electricity, blue for water, green for construction).\n* Ensure you select the correct issue type when reporting."/>
+                            android:text="@string/marker_color_coding_instructions"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                             android:textColor="#000000"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="Photo Attachments:"/>
+                            android:text="@string/photo_attachments"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                             android:padding="8dp"
                             android:textColor="#000000"
                             android:textSize="16sp"
-                            android:text="* Attach relevant photos to your report to provide additional context.\n* Ensure photos are clear and directly related to the reported issue."/>
+                            android:text="@string/photo_attachments_instructions"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -150,7 +150,7 @@
                             android:textColor="#000000"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="Emergency Situations:"/>
+                            android:text="@string/emergency_situations"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -158,7 +158,7 @@
                             android:padding="8dp"
                             android:textColor="#000000"
                             android:textSize="16sp"
-                            android:text="* For emergencies (e.g., immediate safety hazards), contact local emergency services directly.\n* Use the app for non-emergency civic issues only."/>
+                            android:text="@string/emergency_situations_instructions"/>
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
@@ -191,7 +191,7 @@
                 android:id="@+id/textviewh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HOME"
+                android:text="@string/home"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -215,7 +215,7 @@
                 android:id="@+id/textviewsafe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MAP"
+                android:text="@string/map"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -239,7 +239,7 @@
                 android:id="@+id/textviewn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GUIDELINES"
+                android:text="@string/guidelines"
                 android:textSize="8sp"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -262,7 +262,7 @@
                 android:id="@+id/textviewa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROFILE"
+                android:text="@string/profile"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>

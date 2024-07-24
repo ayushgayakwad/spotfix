@@ -25,7 +25,7 @@
 				android:padding="8dp"
 				android:gravity="center"
 				android:textSize="25sp"
-				android:text="Report"
+				android:text="@string/report_title"
 				android:textColor="#000000"
 				android:textStyle="bold"/>
 		</LinearLayout>
@@ -51,7 +51,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="4dp"
-					android:text="Department"
+					android:text="@string/department"
 					android:textSize="14sp"
 					android:textColor="#000000" />
 				<LinearLayout
@@ -67,7 +67,7 @@
 						android:layout_height="wrap_content"
 						android:padding="8dp"
 						android:gravity="center_horizontal|center_vertical"
-						android:text="Choose an option"
+						android:text="@string/choose_an_option"
 						android:textSize="16sp"
 						android:textColor="#757575"/>
 					<ImageView
@@ -91,7 +91,7 @@
 					android:paddingLeft="8dp"
 					android:paddingRight="8dp"
 					android:paddingBottom="4dp"
-					android:text="Description"
+					android:text="@string/description"
 					android:textSize="14sp"
 					android:textColor="#000000" />
 				<LinearLayout
@@ -106,7 +106,7 @@
 						android:padding="12dp"
 						android:textSize="16sp"
 						android:textColor="#000000"
-						android:hint="Description"
+						android:hint="@string/description"
 						android:background="@android:color/transparent"
 						android:layout_weight="1"
 						android:singleLine="true"
@@ -125,7 +125,7 @@
 						android:paddingLeft="8dp"
 						android:paddingRight="8dp"
 						android:paddingBottom="4dp"
-						android:text="Upload image "
+						android:text="@string/upload"
 						android:textSize="14sp"
 						android:textColor="#000000" />
 					<ImageView
@@ -161,7 +161,7 @@
 				android:padding="8dp"
 				android:gravity="center"
 				android:textSize="16sp"
-				android:text="Image uploaded successfully!"
+				android:text="@string/image_uploaded_successfully"
 				android:textColor="#4a934a"/>
 
 			<LinearLayout
@@ -182,7 +182,7 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:background="#1944f1"
-					android:text="SUBMIT"
+					android:text="@string/submit"
 					android:textSize="20sp"
 					android:textStyle="bold"
 					android:textColor="#FFFFFF"

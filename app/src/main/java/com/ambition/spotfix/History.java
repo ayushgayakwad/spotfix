@@ -5,6 +5,8 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class History extends AppCompatActivity {
 
@@ -39,6 +42,7 @@ public class History extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
         super.onCreate(_savedInstanceState);
+        loadLanguagePreference();
         setContentView(R.layout.activity_history);
         initialize(_savedInstanceState);
         initializeLogic();
@@ -148,11 +152,11 @@ public class History extends AppCompatActivity {
                 _SetCornerRadius(description, 25, 0, "#800020");
                 _SetCornerRadius(linear4, 50, 12, "#FAA0A0");
             }
-            id.setText("Issue ID: " + issue.get("issue_id").toString());
-            location.setText("Location: " + issue.get("latitude").toString()+", " + issue.get("longitude").toString());
+            id.setText(getString(R.string.issue_id) + ": " + issue.get("issue_id").toString());
             description.setText(issue.get("desc").toString());
-            date.setText("Reported on: " + issue.get("reported_time").toString());
-            status.setText("Status: " + issue.get("status").toString());
+            date.setText(getString(R.string.reported_on) + ": " + issue.get("reported_time").toString());
+            status.setText(getString(R.string.status) + ": " + issue.get("status").toString());
+            location.setText(getString(R.string.location) + ": " + issue.get("latitude").toString()+", " + issue.get("longitude").toString());
             String imageUrl = issue.get("image") != null ? issue.get("image").toString() : "";
             Glide.with(getBaseContext()).load(imageUrl).into(image);
             return _v;
@@ -165,6 +169,20 @@ public class History extends AppCompatActivity {
         ab.setCornerRadius((float) _radius);
         _view.setElevation((float) _shadow);
         _view.setBackground(ab);
+    }
+
+    public void loadLanguagePreference() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String languageCode = sharedPreferences.getString("language", "en");
+        setLocale(languageCode);
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     @Override

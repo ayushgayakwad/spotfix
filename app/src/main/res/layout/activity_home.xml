@@ -19,7 +19,7 @@
             android:padding="8dp"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="SpotFix"
+            android:text="@string/app_name"
             android:textColor="#000000"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -53,7 +53,7 @@
                         android:padding="16dp"
                         android:layout_marginTop="25dp"
                         android:textSize="18sp"
-                        android:text="Spot a problem? Potholes, lights, water? Report it here, fix your neighborhood and be the change."
+                        android:text="@string/spot_problem"
                         android:textColor="#000000"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                             android:id="@+id/report"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Report an issue >>"
+                            android:text="@string/report"
                             android:layout_weight="2"
                             android:padding="12dp"
                             android:textSize="18dp"
@@ -84,7 +84,7 @@
                             android:id="@+id/history"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Reported Issues"
+                            android:text="@string/history"
                             android:layout_weight="2"
                             android:padding="12dp"
                             android:textSize="18dp"
@@ -125,7 +125,7 @@
                 android:id="@+id/textviewh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HOME"
+                android:text="@string/home"
                 android:textSize="8sp"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -149,7 +149,7 @@
                 android:id="@+id/textviewsafe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MAP"
+                android:text="@string/map"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -172,7 +172,7 @@
                 android:id="@+id/textviewn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GUIDELINES"
+                android:text="@string/guidelines"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -195,7 +195,7 @@
                 android:id="@+id/textviewa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROFILE"
+                android:text="@string/profile"
                 android:textSize="8sp"
                 android:textColor="#000000" />
         </LinearLayout>

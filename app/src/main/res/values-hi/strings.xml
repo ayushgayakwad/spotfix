@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">स्पॉटफिक्स</string>
+    <string name="history">रिपोर्ट की गई समस्याएँ</string>
+    <string name="language">भाषा बदलें</string>
+    <string name="report">समस्या रिपोर्ट करें</string>
+    <string name="location">स्थान</string>
+    <string name="department">विभाग</string>
+    <string name="upload">छवि अपलोड करें</string>
+    <string name="submit">जमा करें</string>
+    <string name="report_title">रिपोर्ट</string>
+    <string name="map">मानचित्र</string>
+    <string name="guidelines">निर्देश</string>
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="email">ईमेल</string>
+    <string name="phone">फोन नंबर</string>
+    <string name="uid">यूआईडी</string>
+    <string name="address">पता</string>
+    <string name="city">शहर</string>
+    <string name="district">जिला</string>
+    <string name="state">राज्य</string>
+    <string name="password">पासवर्ड बदलें?</string>
+    <string name="logout">लॉगआउट</string>
+    <string name="issue_id">समस्या आईडी</string>
+    <string name="description">विवरण</string>
+    <string name="reported_on">रिपोर्ट किया गया</string>
+    <string name="status">स्थिति</string>
+    <string name="home">मुख्य पृष्ठ</string>
+    <string name="loading_map">मानचित्र लोड हो रहा है...</string>
+    <string name="spot_problem">कोई समस्या देखी? गड्ढे, लाइट्स, पानी? इसे यहाँ रिपोर्ट करें, अपने पड़ोस को ठीक करें और बदलाव का हिस्सा बनें।</string>
+    <string name="image_uploaded_successfully">छवि सफलतापूर्वक अपलोड हो गई!</string>
+    <string name="choose_an_option">एक विकल्प चुनें</string>
+    <string name="okay">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="conti">जारी रखें</string>
+    <string name="reporting_civic_issues">सिविक मुद्दों की रिपोर्टिंग:</string>
+    <string name="reporting_civic_issues_instructions">
+        * समस्या रिपोर्ट करें अनुभाग पर जाएँ।\n
+        * रिपोर्ट फॉर्म में समस्या का विस्तृत विवरण प्रदान करें।\n
+        * संबंधित फोटो शामिल करें।
+    </string>
+    <string name="map_navigation">मानचित्र नेविगेशन:</string>
+    <string name="map_navigation_instructions">
+        * मानचित्र पर ज़ूम इन और आउट करने के लिए पिंच इशारों का उपयोग करें।\n
+        * मानचित्र पर पैन करने के लिए अपनी उंगली खींचें।\n
+        * विशिष्ट क्षेत्र पर ज़ूम इन करने के लिए डबल-टैप करें।\n
+        * नवीनतम अपडेट और हल की गई समस्याएँ देखने के लिए समय-समय पर मानचित्र ताज़ा करें।
+    </string>
+    <string name="marker_color_coding">मार्कर रंग कोडिंग:</string>
+    <string name="marker_color_coding_instructions">
+        * मार्करों पर विभिन्न रंग विभिन्न प्रकार की समस्याओं को दर्शाते हैं (जैसे, बिजली के लिए लाल, पानी के लिए नीला, निर्माण के लिए हरा)।\n
+        * रिपोर्ट करते समय सुनिश्चित करें कि आप सही समस्या प्रकार चुनें।
+    </string>
+    <string name="photo_attachments">फोटो अटैचमेंट्स:</string>
+    <string name="photo_attachments_instructions">
+        * अपने रिपोर्ट में अतिरिक्त संदर्भ प्रदान करने के लिए संबंधित फोटो संलग्न करें।\n
+        * सुनिश्चित करें कि फोटो स्पष्ट और रिपोर्ट की गई समस्या से सीधे संबंधित हो।
+    </string>
+    <string name="emergency_situations">आपातकालीन स्थितियाँ:</string>
+    <string name="emergency_situations_instructions">
+        * आपातकाल (जैसे, तत्काल सुरक्षा खतरों) के लिए, स्थानीय आपातकालीन सेवाओं से सीधे संपर्क करें।\n
+        * ऐप का उपयोग केवल गैर-आपातकालीन सिविक मुद्दों के लिए करें।
+    </string>
+</resources>

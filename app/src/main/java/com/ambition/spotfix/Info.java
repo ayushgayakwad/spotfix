@@ -1,6 +1,8 @@
 package com.ambition.spotfix;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
 
 public class Info extends AppCompatActivity {
     private LinearLayout linearx;
@@ -20,6 +24,7 @@ public class Info extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLanguagePreference();
         setContentView(R.layout.activity_info);
 
         linear7 = findViewById(R.id.linear7);
@@ -55,6 +60,20 @@ public class Info extends AppCompatActivity {
             finish();
             overridePendingTransition(android.R.anim.fade_out, android.R.anim.fade_in);
         });
+    }
+
+    public void loadLanguagePreference() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String languageCode = sharedPreferences.getString("language", "en");
+        setLocale(languageCode);
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     @Override

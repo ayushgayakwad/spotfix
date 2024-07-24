@@ -1,9 +1,55 @@
 <resources>
     <string name="app_name">SpotFix</string>
-    <string name="number">0000000000</string>
-    <string name="sent">Text Message Sent</string>
-    <string name="setting">Settings</string>
-    <string name="contact_1">Contact 1</string>
-    <string name="contact_2">Contact 2</string>
-    <string name="contact_3">Contact 3</string>
+    <string name="history">Reported Issues</string>
+    <string name="language">Change language</string>
+    <string name="report">Report an issue</string>
+    <string name="location">Location</string>
+    <string name="department">Department</string>
+    <string name="upload">Upload image</string>
+    <string name="submit">Submit</string>
+    <string name="report_title">Report</string>
+    <string name="map">Map</string>
+    <string name="guidelines">Guidelines</string>
+    <string name="profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone Number</string>
+    <string name="uid">UID</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="district">District</string>
+    <string name="state">State</string>
+    <string name="home">Home</string>
+    <string name="password">Change password?</string>
+    <string name="logout">Logout</string>
+    <string name="issue_id">Issue ID</string>
+    <string name="description">Description</string>
+    <string name="reported_on">Reported on</string>
+    <string name="status">Status</string>
+    <string name="loading_map">Loading map...</string>
+    <string name="spot_problem">Spot a problem? Potholes, lights, water? Report it here, fix your neighborhood and be the change.</string>
+    <string name="image_uploaded_successfully">Image uploaded successfully!</string>
+    <string name="choose_an_option">Choose an option</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="conti">Continue</string>
+    <string name="reporting_civic_issues">Reporting Civic Issues:</string>
+    <string name="reporting_civic_issues_instructions">
+        * Goto Report an issue section.\n* Provide a detailed description of the issue in the report form.\n* Include relevant photo of issue.
+    </string>
+    <string name="map_navigation">Map Navigation:</string>
+    <string name="map_navigation_instructions">
+        * Use pinch gestures to zoom in and out on the map.\n* Drag your finger to pan across the map.\n* Double-tap to zoom in on a specific area.\n* Refresh the map periodically to view the latest updates and resolved issues.
+    </string>
+    <string name="marker_color_coding">Marker Color Coding:</string>
+    <string name="marker_color_coding_instructions">
+        * Different colors on markers indicate different types of issues (e.g., red for electricity, blue for water, green for construction).\n* Ensure you select the correct issue type when reporting.
+    </string>
+    <string name="photo_attachments">Photo Attachments:</string>
+    <string name="photo_attachments_instructions">
+        * Attach relevant photos to your report to provide additional context.\n* Ensure photos are clear and directly related to the reported issue.
+    </string>
+    <string name="emergency_situations">Emergency Situations:</string>
+    <string name="emergency_situations_instructions">
+        * For emergencies (e.g., immediate safety hazards), contact local emergency services directly.\n* Use the app for non-emergency civic issues only.
+    </string>
 </resources>

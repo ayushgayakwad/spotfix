@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
@@ -54,6 +55,7 @@ import org.w3c.dom.Text;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Random;
 import java.util.UUID;
 
@@ -102,6 +104,7 @@ public class Report extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
         super.onCreate(_savedInstanceState);
+        loadLanguagePreference();
         setContentView(R.layout.activity_report);
         initialize(_savedInstanceState);
         FirebaseApp.initializeApp(this);
@@ -586,6 +589,20 @@ public class Report extends AppCompatActivity {
     public static int getRandom(int _min, int _max) {
         Random random = new Random();
         return random.nextInt(_max - _min + 1) + _min;
+    }
+
+    public void loadLanguagePreference() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        String languageCode = sharedPreferences.getString("language", "en");
+        setLocale(languageCode);
+    }
+
+    public void setLocale(String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
     }
 
     public void _rippleRoundStroke(final View _view, final String _focus, final String _pressed, final double _round, final double _stroke, final String _strokeclr) {

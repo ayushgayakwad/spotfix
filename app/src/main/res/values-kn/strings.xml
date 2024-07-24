@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ಸ್ಪಾಟ್‌ಫಿಕ್ಸ್</string>
+    <string name="history">ಅವರಿಸಿಕೊಂಡಿರುವ ಸಮಸ್ಯೆಗಳು</string>
+    <string name="language">ಭಾಷೆ ಬದಲಾಯಿಸು</string>
+    <string name="report">ಸಮಸ್ಯೆ ವರದಿ ಮಾಡು</string>
+    <string name="location">ಸ್ಥಳ</string>
+    <string name="department">ಇಲಾಖೆ</string>
+    <string name="upload">ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ</string>
+    <string name="submit">ಸಲ್ಲಿಸು</string>
+    <string name="report_title">ವರದಿ</string>
+    <string name="map">ನಕ್ಷೆ</string>
+    <string name="guidelines">ಮಾರ್ಗಸೂಚಿಗಳು</string>
+    <string name="profile">ಪ್ರೊಫೈಲ್</string>
+    <string name="email">ಇಮೇಲ್</string>
+    <string name="phone">ಫೋನ್ ಸಂಖ್ಯೆ</string>
+    <string name="uid">ಯುಐಡಿ</string>
+    <string name="address">ವಿಳಾಸ</string>
+    <string name="city">ನಗರ</string>
+    <string name="district">ಜಿಲ್ಲೆ</string>
+    <string name="state">ರಾಜ್ಯ</string>
+    <string name="password">ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸು?</string>
+    <string name="logout">ಲಾಗ್ ಔಟ್</string>
+    <string name="issue_id">ಸಮಸ್ಯೆ ಐಡಿ</string>
+    <string name="description">ವಿವರಣೆ</string>
+    <string name="reported_on">ವರದಿಯಾಗಿದೆ</string>
+    <string name="status">ಸ್ಥಿತಿ</string>
+    <string name="home">ಮನೆ</string>
+    <string name="loading_map">ನಕ್ಷೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ...</string>
+    <string name="spot_problem">ಸಮಸ್ಯೆಯನ್ನು ಕಂಡಿದ್ದೀರಾ? ಗದ್ದಲುಗಳು, ಬೆಳಕುಗಳು, ನೀರು? ಇಲ್ಲಿ ವರದಿ ಮಾಡಿ, ನಿಮ್ಮ ನೆರೆಹೊರೆಯನ್ನು ಸರಿಪಡಿಸಿ ಮತ್ತು ಬದಲಾವಣೆಯ ಭಾಗವಾಗಿರಿ.</string>
+    <string name="image_uploaded_successfully">ಚಿತ್ರ ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ!</string>
+    <string name="choose_an_option">ಒಂದು ಆಯ್ಕೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="okay">ಸರಿ</string>
+    <string name="cancel">ರದ್ದು</string>
+    <string name="conti">ಮುಂದುವರಿಸು</string>
+    <string name="reporting_civic_issues">ನಾಗರಿಕ ಸಮಸ್ಯೆಗಳ ವರದಿ:</string>
+    <string name="reporting_civic_issues_instructions">
+        * ಸಮಸ್ಯೆ ವರದಿ ಮಾಡು ವಿಭಾಗಕ್ಕೆ ಹೋಗಿ.\n
+        * ವರದಿ ಫಾರ್ಮ್ನಲ್ಲಿ ಸಮಸ್ಯೆಯ ವಿವರವಾದ ವಿವರಣೆ ಒದಗಿಸಿ.\n
+        * ಸಂಬಂಧಿಸಿದ ಫೋಟೋ ಸೇರಿಸಿ.
+    </string>
+    <string name="map_navigation">ನಕ್ಷೆ ನಾವಿಗೇಶನ್:</string>
+    <string name="map_navigation_instructions">
+        * ನಕ್ಷೆಯ ಮೇಲೆ ઝೂಮ್ ಇನ್ ಮತ್ತು ಔಟ್ ಮಾಡಲು ಪಿಂಚ್ ಇಶಾರೆಗಳ ಉಪಯೋಗಿಸಿ.\n
+        * ನಕ್ಷೆ ಬಳಸಿಕೊಂಡು ಪ್ಯಾನ್ ಮಾಡಲು ನಿಮ್ಮ ಬೆರಳು ಒಯ್ಯಿ.\n
+        * ನಿರ್ದಿಷ್ಟ ಪ್ರದೇಶದಲ್ಲಿ ઝೂಮ್ ಇನ್ ಮಾಡಲು ಡಬಲ್-ಟಾಪ್ ಮಾಡಿ.\n
+        * ನವೀನ ಅಪ್ಡೇಟ್‌ಗಳು ಮತ್ತು ಪರಿಹಾರಗೊಂಡ ಸಮಸ್ಯೆಗಳನ್ನು ವೀಕ್ಷಿಸಲು ನಕ್ಷೆ ಸಮಯದಷ್ಟೂ ತಾಜಾ ಮಾಡಿಕೊಳ್ಳಿ.
+    </string>
+    <string name="marker_color_coding">ಮಾರ್ಕರ್ ಬಣ್ಣ ಕೋಡಿಂಗ್:</string>
+    <string name="marker_color_coding_instructions">
+        * ಮಾರ್ಕರ್‌ಗಳ ವಿವಿಧ ಬಣ್ಣಗಳು ವಿಭಿನ್ನ ಸಮಸ್ಯಾ ಪ್ರಕಾರಗಳನ್ನು ಸೂಚಿಸುತ್ತವೆ (ಉದಾ: ವಿದ್ಯುತ್‌ಗಾಗಿ ಕೆಂಪು, ನೀರಿಗಾಗಿ ನೀಲ, ನಿರ್ಮಾಣಕ್ಕಾಗಿ ಹಸಿರು).\n
+        * ವರದಿ ಮಾಡುವಾಗ ನೀವು ಸರಿಯಾದ ಸಮಸ್ಯಾ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆ ಮಾಡುವುದು ಖಚಿತವಾಗಿರಿಸಿ.
+    </string>
+    <string name="photo_attachments">ಫೋಟೋ ಅಟ್ಯಾಚ್‌ಮೆಂಟ್‌ಗಳು:</string>
+    <string name="photo_attachments_instructions">
+        * ನಿಮ್ಮ ವರದಿಗೆ ಹೆಚ್ಚಿನ ಶ್ರೇಣಿಯನ್ನು ಒದಗಿಸಲು ಸಂಬಂಧಿಸಿದ ಫೋಟೋಗಳನ್ನು ಅಟ್ಯಾಚ್ ಮಾಡಿ.\n
+        * ಫೋಟೋಗಳು ಸ್ಪಷ್ಟವಾಗಿದ್ದು ವರದಿ ಮಾಡಿದ ಸಮಸ್ಯೆಗೆ ನೇರವಾಗಿ ಸಂಬಂಧಿಸಿದಂತಿರಬೇಕು ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.
+    </string>
+    <string name="emergency_situations">ತುರ್ತು ಪರಿಸ್ಥಿತಿಗಳು:</string>
+    <string name="emergency_situations_instructions">
+        * ತುರ್ತು ಪರಿಸ್ಥಿತಿಗಳಿಗೆ (ಉದಾ: ತಕ್ಷಣದ ಭದ್ರತಾ ಅಪಾಯ) ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಿ.\n
+        * ಈ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ತುರ್ತು ನಿಯಮಗಳಿಲ್ಲದ ನಾಗರಿಕ ಸಮಸ್ಯೆಗಳಿಗೆ ಮಾತ್ರ ಬಳಸುವಂತೆ ನೋಡಿ.
+    </string>
+</resources>
