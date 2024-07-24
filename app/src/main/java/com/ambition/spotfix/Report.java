@@ -54,6 +54,7 @@ import org.w3c.dom.Text;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.UUID;
 
 public class Report extends AppCompatActivity {
@@ -65,6 +66,7 @@ public class Report extends AppCompatActivity {
     private String imagestate = "";
     private String timestamp = "";
     private String DownloadUri = "";
+    private double issue_id;
     private TextView progresst;
     private LinearLayout linear2;
     private LinearLayout linear3;
@@ -204,6 +206,7 @@ public class Report extends AppCompatActivity {
                         else {
                             if (department.getText().toString().trim().equals("Water Department")) {
                                 timestamp = getCurrentTimestamp();
+                                issue_id = getRandom((int)(111111111), (int)(999999999));
                                 map = new HashMap<>();
                                 map.put("name", userdata.getString("name", ""));
                                 map.put("desc", desc.getText().toString().trim());
@@ -213,6 +216,7 @@ public class Report extends AppCompatActivity {
                                 map.put("image", DownloadUri);
                                 map.put("status", "unsolved");
                                 map.put("reported_time", timestamp);
+                                map.put("issue_id", issue_id);
                                 map.put("email", FirebaseAuth.getInstance().getCurrentUser().getEmail());
                                 map.put("uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 water.push().updateChildren(map);
@@ -223,6 +227,7 @@ public class Report extends AppCompatActivity {
                             } else {
                                 if (department.getText().toString().trim().equals("Electricity Department")) {
                                     timestamp = getCurrentTimestamp();
+                                    issue_id = getRandom((int)(111111111), (int)(999999999));
                                     map = new HashMap<>();
                                     map.put("name", userdata.getString("name", ""));
                                     map.put("desc", desc.getText().toString().trim());
@@ -232,6 +237,7 @@ public class Report extends AppCompatActivity {
                                     map.put("image", DownloadUri);
                                     map.put("status", "unsolved");
                                     map.put("reported_time", timestamp);
+                                    map.put("issue_id", issue_id);
                                     map.put("email", FirebaseAuth.getInstance().getCurrentUser().getEmail());
                                     map.put("uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                                     electricity.push().updateChildren(map);
@@ -242,6 +248,7 @@ public class Report extends AppCompatActivity {
                                 } else {
                                     if (department.getText().toString().trim().equals("Construction Department")) {
                                         timestamp = getCurrentTimestamp();
+                                        issue_id = getRandom((int)(111111111), (int)(999999999));
                                         map = new HashMap<>();
                                         map.put("name", userdata.getString("name", ""));
                                         map.put("desc", desc.getText().toString().trim());
@@ -251,6 +258,7 @@ public class Report extends AppCompatActivity {
                                         map.put("image", DownloadUri);
                                         map.put("status", "unsolved");
                                         map.put("reported_time", timestamp);
+                                        map.put("issue_id", issue_id);
                                         map.put("email", FirebaseAuth.getInstance().getCurrentUser().getEmail());
                                         map.put("uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                                         construction.push().updateChildren(map);
@@ -261,6 +269,7 @@ public class Report extends AppCompatActivity {
                                     } else {
                                         if (department.getText().toString().trim().equals("Sanitation Department")) {
                                             timestamp = getCurrentTimestamp();
+                                            issue_id = getRandom((int)(111111111), (int)(999999999));
                                             map = new HashMap<>();
                                             map.put("name", userdata.getString("name", ""));
                                             map.put("desc", desc.getText().toString().trim());
@@ -270,6 +279,7 @@ public class Report extends AppCompatActivity {
                                             map.put("image", DownloadUri);
                                             map.put("status", "unsolved");
                                             map.put("reported_time", timestamp);
+                                            map.put("issue_id", issue_id);
                                             map.put("email", FirebaseAuth.getInstance().getCurrentUser().getEmail());
                                             map.put("uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                                             sanitation.push().updateChildren(map);
@@ -571,6 +581,11 @@ public class Report extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date now = new Date();
         return sdf.format(now);
+    }
+
+    public static int getRandom(int _min, int _max) {
+        Random random = new Random();
+        return random.nextInt(_max - _min + 1) + _min;
     }
 
     public void _rippleRoundStroke(final View _view, final String _focus, final String _pressed, final double _round, final double _stroke, final String _strokeclr) {

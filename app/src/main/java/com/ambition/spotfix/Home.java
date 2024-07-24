@@ -60,6 +60,7 @@ public class Home extends AppCompatActivity {
     private LinearLayout linear7;
     private LinearLayout linear8;
     private TextView report;
+    private TextView history;
     private ScrollView vscroll1;
     private FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
@@ -99,6 +100,7 @@ public class Home extends AppCompatActivity {
         linearx = findViewById(R.id.linearx);
         linears = findViewById(R.id.linears);
         report = findViewById(R.id.report);
+        history = findViewById(R.id.history);
         vscroll1 = findViewById(R.id.vscroll1);
 
         userdata = getSharedPreferences("userdata", Activity.MODE_PRIVATE);
@@ -108,6 +110,7 @@ public class Home extends AppCompatActivity {
         Window window = this.getWindow();
         window.setNavigationBarColor(Color.parseColor("#1944f1"));
         _rippleRoundStroke(report, "#4c6ef4", "#f5f5f5", 25, 2, "#eeeeee");
+        _rippleRoundStroke(history, "#4c6ef4", "#f5f5f5", 25, 2, "#eeeeee");
 
         FirebaseApp.initializeApp(this);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -136,6 +139,11 @@ public class Home extends AppCompatActivity {
 
         report.setOnClickListener(v -> {
             Intent n = new Intent(this,Report.class);
+            startActivity(n);
+        });
+
+        history.setOnClickListener(v -> {
+            Intent n = new Intent(this,History.class);
             startActivity(n);
         });
 
