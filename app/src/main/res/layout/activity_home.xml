@@ -103,7 +103,7 @@
                             android:id="@+id/chatbot"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Chat Bot"
+                            android:text="@string/chatbot"
                             android:layout_weight="2"
                             android:padding="12dp"
                             android:textSize="18dp"

@@ -32,6 +32,8 @@
     <string name="okay">ಸರಿ</string>
     <string name="cancel">ರದ್ದು</string>
     <string name="conti">ಮುಂದುವರಿಸು</string>
+    <string name="chatbot">ಚಾಟ್ ಬಾಟ್</string>
+    <string name="type_a_message">ಸಂದೇಶ ಟೈಪ್ ಮಾಡಿ...</string>
     <string name="reporting_civic_issues">ನಾಗರಿಕ ಸಮಸ್ಯೆಗಳ ವರದಿ:</string>
     <string name="reporting_civic_issues_instructions">
         * ಸಮಸ್ಯೆ ವರದಿ ಮಾಡು ವಿಭಾಗಕ್ಕೆ ಹೋಗಿ.\n

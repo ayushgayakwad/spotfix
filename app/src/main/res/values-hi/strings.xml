@@ -32,6 +32,8 @@
     <string name="okay">ठीक है</string>
     <string name="cancel">रद्द करें</string>
     <string name="conti">जारी रखें</string>
+    <string name="chatbot">चैट बॉट</string>
+    <string name="type_a_message">संदेश टाइप करें...</string>
     <string name="reporting_civic_issues">सिविक मुद्दों की रिपोर्टिंग:</string>
     <string name="reporting_civic_issues_instructions">
         * समस्या रिपोर्ट करें अनुभाग पर जाएँ।\n

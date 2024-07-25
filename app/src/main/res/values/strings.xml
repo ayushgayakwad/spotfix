@@ -32,6 +32,8 @@
     <string name="okay">Okay</string>
     <string name="cancel">Cancel</string>
     <string name="conti">Continue</string>
+    <string name="chatbot">Chat Bot</string>
+    <string name="type_a_message">Type a message...</string>
     <string name="reporting_civic_issues">Reporting Civic Issues:</string>
     <string name="reporting_civic_issues_instructions">
         * Goto Report an issue section.\n* Provide a detailed description of the issue in the report form.\n* Include relevant photo of issue.
