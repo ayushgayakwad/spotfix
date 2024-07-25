@@ -23,6 +23,10 @@ efficiently.
 
  ● Photo and video upload: Attach photos or videos to provide visual evidence and enhance your complaint description.
 
+ ● Multi-language support: App supports 3 languages: English, Hindi and Kannada.
+
+ ● History and status of your submitted issue-reports;
+
 ## How to report a civic-issue:
  
  1. Click on "Report an issue" button.
