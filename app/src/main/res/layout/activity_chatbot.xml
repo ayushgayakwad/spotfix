@@ -54,6 +54,13 @@
                     android:divider="@android:color/transparent"
                     android:dividerHeight="8dp" />
 
+                <ProgressBar
+                    android:id="@+id/uploadProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"

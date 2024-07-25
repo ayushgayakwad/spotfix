@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
-import java.util.UUID;
 
 public class ChatBot extends AppCompatActivity {
 
@@ -48,6 +48,7 @@ public class ChatBot extends AppCompatActivity {
     private ListView chatListView;
     private EditText chatInput;
     private Button sendButton;
+    private ProgressBar uploadProgressBar;
 
     private ArrayAdapter<String> chatAdapter;
     private ArrayList<String> chatMessages;
@@ -74,11 +75,12 @@ public class ChatBot extends AppCompatActivity {
         chatListView = findViewById(R.id.chatListView);
         chatInput = findViewById(R.id.chatInput);
         sendButton = findViewById(R.id.sendButton);
+        uploadProgressBar = findViewById(R.id.uploadProgressBar);
 
         userdata = getSharedPreferences("userdata", Activity.MODE_PRIVATE);
 
         chatMessages = new ArrayList<>();
-        chatAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, chatMessages);
+        chatAdapter = new ChatAdapter(this, chatMessages);
         chatListView.setAdapter(chatAdapter);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -102,8 +104,7 @@ public class ChatBot extends AppCompatActivity {
     }
 
     private void processMessage(String message) {
-        chatMessages.add("You: " + message);
-        chatAdapter.notifyDataSetChanged();
+        addMessage("You: " + message, true);
 
         if (department == null) {
             if (message.equalsIgnoreCase("water") || message.equalsIgnoreCase("electricity") ||
@@ -121,8 +122,13 @@ public class ChatBot extends AppCompatActivity {
     }
 
     private void sendMessage(String message) {
-        chatMessages.add("Bot: " + message);
+        addMessage("Bot: " + message, false);
+    }
+
+    private void addMessage(String message, boolean isUser) {
+        chatMessages.add(message);
         chatAdapter.notifyDataSetChanged();
+        chatListView.smoothScrollToPosition(chatMessages.size() - 1);
     }
 
     private void openFileChooser() {
@@ -140,8 +146,10 @@ public class ChatBot extends AppCompatActivity {
             uploadIssue();
         }
     }
+
     private void uploadIssue() {
         if (imageUri != null) {
+            uploadProgressBar.setVisibility(View.VISIBLE);
             final StorageReference fileReference = storageReference.child(System.currentTimeMillis() + ".jpg");
             // Upload the image
             fileReference.putFile(imageUri)
@@ -153,6 +161,7 @@ public class ChatBot extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     String imageUrl = uri.toString();
                                     saveIssueToDatabase(imageUrl);
+                                    uploadProgressBar.setVisibility(View.GONE);
                                 }
                             });
                         }
@@ -161,6 +170,14 @@ public class ChatBot extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(ChatBot.this, "Failed to upload image", Toast.LENGTH_SHORT).show();
+                            uploadProgressBar.setVisibility(View.GONE);
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                            uploadProgressBar.setProgress((int) progress);
                         }
                     });
         }
