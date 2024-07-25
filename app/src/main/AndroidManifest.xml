@@ -72,6 +72,11 @@
             android:name="com.ambition.spotfix.LanguageSelector" />
 
         <activity
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:name="com.ambition.spotfix.ChatBot" />
+
+        <activity
             android:exported="true"
             android:screenOrientation="portrait"
             android:name="com.ambition.spotfix.Auth">

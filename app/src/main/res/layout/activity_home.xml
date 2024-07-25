@@ -92,6 +92,25 @@
                             android:textColor="#FFFFFF"
                             android:background="#4c6ef4"/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/chatbot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chat Bot"
+                            android:layout_weight="2"
+                            android:padding="12dp"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:background="#4c6ef4"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
