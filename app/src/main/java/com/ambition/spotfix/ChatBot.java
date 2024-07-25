@@ -89,7 +89,7 @@ public class ChatBot extends AppCompatActivity {
         chatInput.setBackground(new GradientDrawable() { public GradientDrawable getIns(int a, int b, int c, int d) { this.setCornerRadius(a); this.setStroke(b, c); this.setColor(d); return this; }}.getIns((int)50, (int)0, 0xFFFFFFFF, 0xFFEEEEEE));
         _rippleRoundStroke(sendButton, "#0026c0", "#f5f5f5", 100, 2, "#eeeeee");
 
-        sendMessage("Hello " + userdata.getString("name", "") + "! Welcome to SpotFix. Please choose a department: \n- water;\n- electricity;\n- construction;\n- sanitation;");
+        sendMessage("Hello " + userdata.getString("name", "") + "! 👋 Welcome to SpotFix. Please choose a department: \n- water;\n- electricity;\n- construction;\n- sanitation;");
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,13 +110,13 @@ public class ChatBot extends AppCompatActivity {
             if (message.equalsIgnoreCase("water") || message.equalsIgnoreCase("electricity") ||
                     message.equalsIgnoreCase("construction") || message.equalsIgnoreCase("sanitation")) {
                 department = message.toLowerCase(Locale.ROOT);
-                sendMessage("Please describe the issue:");
+                sendMessage("📝 Please describe the issue");
             } else {
-                sendMessage("Invalid department. Please select one of: water, electricity, construction, sanitation");
+                sendMessage("❌ Invalid department. Please select one of the following: water, electricity, construction, sanitation");
             }
         } else if (description == null) {
             description = message;
-            sendMessage("Please upload an image of the issue:");
+            sendMessage("📸 Please upload an image of the issue");
             openFileChooser();
         }
     }
@@ -203,7 +203,7 @@ public class ChatBot extends AppCompatActivity {
 
         databaseReference.child(department).push().setValue(issue);
 
-        sendMessage("Issue reported successfully! Thank you.");
+        sendMessage("Issue reported successfully! ✅\n\nYour issue ID is: " + issueId + "\n\nThank you. 🙏");
     }
 
     public static String getCurrentTimestamp() {
